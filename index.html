@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入 Vue 3 全域版本 (Global Build) -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Google Fonts Inter & Noto Serif TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -47,6 +52,7 @@
             background-color: #FAF6EE;
             color: #523F29;
         }
+
         .serif-title {
             font-family: 'Noto Serif TC', serif;
         }
@@ -56,15 +62,22 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
-<body class="bg-warmcream text-amberwood-900 min-h-screen flex flex-col selection:bg-amberwood-300 selection:text-amberwood-900">
+
+<body
+    class="bg-warmcream text-amberwood-900 min-h-screen flex flex-col selection:bg-amberwood-300 selection:text-amberwood-900">
 
     <!-- 頂部導覽列 -->
     <header class="sticky top-0 z-50 bg-amberwood-50/90 backdrop-blur-md border-b border-amberwood-200/60 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-full bg-amberwood-800 text-goldaccent flex items-center justify-center shadow-md">
+                <div
+                    class="w-10 h-10 rounded-full bg-amberwood-800 text-goldaccent flex items-center justify-center shadow-md">
                     <i class="fa-solid fa-leaf text-lg"></i>
                 </div>
                 <div>
@@ -75,6 +88,8 @@
                 <a href="#live" class="hover:text-goldaccent transition-colors">線上連結</a>
                 <a href="#schedule" class="hover:text-goldaccent transition-colors">課程時間表</a>
                 <a href="#story" class="hover:text-goldaccent transition-colors">故事集</a>
+                <a href="#practice" class="hover:text-goldaccent transition-colors">覺察練習</a>
+                <a href="#wisdom" class="hover:text-goldaccent transition-colors">智慧小語</a>
             </nav>
             <div class="flex items-center space-x-3">
                 <!--
@@ -83,330 +98,236 @@
                     <span>管理者設定</span>
                 </button>
                 -->
-                <a href="#live" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-amberwood-800 hover:bg-amberwood-900 text-goldaccent text-sm font-medium transition shadow hover:shadow-md">
+                <a href="#live"
+                    class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-amberwood-800 hover:bg-amberwood-900 text-goldaccent text-sm font-medium transition shadow hover:shadow-md">
                     <i class="fa-solid fa-video mr-2"></i>進入視訊
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- 頁首主視覺 (Hero Section) -->
-    <section class="relative bg-gradient-to-b from-amberwood-100 via-warmcream to-warmcream py-20 lg:py-32 overflow-hidden border-b border-amberwood-200/40">
-        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#7c5f38_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-amberwood-200/70 text-amberwood-800 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 shadow-sm border border-amberwood-300/50">
-                <i class="fa-solid fa-spa text-goldaccent mr-1.5"></i> 生命智慧系列小故事
-            </span>
-            <h1 class="serif-title text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-amberwood-950 mb-6 leading-tight">
-                在生活中找回 <span class="text-amberwood-600 underline decoration-goldaccent decoration-wavy decoration-1 underline-offset-8">內在的寧靜</span>
-            </h1>
-            <p class="max-w-2xl mx-auto text-base sm:text-lg text-amberwood-700 font-normal mb-10 leading-relaxed">
-                透過短篇小故事，一起撥開日常煩憂。紀氏佛堂邀請您一同參與線上心靈小故事，暫時放下煩憂，找回生命的初衷與溫暖。
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#live" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amberwood-800 hover:bg-amberwood-900 text-goldaccent font-medium text-base transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-3">
-                    <i class="fa-solid fa-video-camera text-xl"></i>
-                    <span>立即進入當前會議室</span>
-                </a>
-                <a href="#schedule" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/80 hover:bg-white text-amberwood-800 font-medium text-base transition border border-amberwood-300 shadow-sm flex items-center justify-center space-x-2">
-                    <i class="fa-solid fa-calendar-days text-amberwood-600"></i>
-                    <span>查看課程時間表</span>
-                </a>
+    <div id="app" v-cloak>
+        <!-- 頁首主視覺 (Hero Section) -->
+        <section
+            class="relative bg-gradient-to-b from-amberwood-100 via-warmcream to-warmcream py-20 lg:py-32 overflow-hidden border-b border-amberwood-200/40">
+            <div
+                class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#7c5f38_1px,transparent_1px)] [background-size:16px_16px]">
             </div>
-        </div>
-    </section>
-
-    <!-- 動態會議連結專屬區塊 (核心功能) -->
-    <section id="live" class="py-16 bg-amberwood-950 text-warmcream relative overflow-hidden">
-        <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-amberwood-900/40 blur-3xl pointer-events-none"></div>
-        <div class="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-amberwood-800/20 blur-3xl pointer-events-none"></div>
-        
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-amberwood-900/60 border border-amberwood-700/60 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-md text-center">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-goldaccent/10 text-goldaccent mb-6 border border-goldaccent/30 shadow-inner">
-                    <i class="fa-solid fa-broadcast-tower text-3xl animate-pulse"></i>
-                </div>
-                <h2 class="serif-title text-3xl sm:text-4xl font-bold tracking-wide mb-3 text-white">通往智慧之門的線上連結</h2>
-                <p class="text-amberwood-200 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-                    點擊下方按鈕即可直接加入 Google Meet 或 Microsoft Teams 會議室。若連結已更新，管理者會即時同步於此。
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span
+                    class="inline-block py-1.5 px-4 rounded-full bg-amberwood-200/70 text-amberwood-800 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 shadow-sm border border-amberwood-300/50">
+                    <i class="fa-solid fa-spa text-goldaccent mr-1.5"></i> 生命智慧系列小故事
+                </span>
+                <h1
+                    class="serif-title text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-amberwood-950 mb-6 leading-tight">
+                    在生活中找回 <span
+                        class="text-amberwood-600 underline decoration-goldaccent decoration-wavy decoration-1 underline-offset-8">內在的寧靜</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-base sm:text-lg text-amberwood-700 font-normal mb-10 leading-relaxed">
+                    透過短篇小故事，一起撥開日常煩憂。紀氏佛堂邀請您一同參與線上心靈小故事，暫時放下煩憂，找回生命的初衷與溫暖。
                 </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#live"
+                        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amberwood-800 hover:bg-amberwood-900 text-goldaccent font-medium text-base transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-video-camera text-xl"></i>
+                        <span>立即進入當前會議室</span>
+                    </a>
+                    <a href="#schedule"
+                        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/80 hover:bg-white text-amberwood-800 font-medium text-base transition border border-amberwood-300 shadow-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-days text-amberwood-600"></i>
+                        <span>查看課程時間表</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                <!-- 會議狀態卡片 -->
-                <div class="bg-amberwood-950/80 border border-amberwood-700/50 rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 pb-4 border-b border-amberwood-800/80">
-                        <div>
-                            <span id="displayPlatformTag" class="inline-block px-3 py-1 rounded-md bg-amberwood-800 text-goldaccent text-xs font-semibold mb-2">Google Meet</span>
-                            <h3 id="displayTopic" class="text-lg font-bold text-white">心靈成長系列：小故事大道理</h3>
-                        </div>
-                        <div class="flex items-center space-x-2 text-xs text-amberwood-300">
+        <!-- 動態會議連結專屬區塊 (核心功能) -->
+        <section id="live" class="py-16 bg-amberwood-950 text-warmcream relative overflow-hidden">
+            <div
+                class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-amberwood-900/40 blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-amberwood-800/20 blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div
+                    class="bg-amberwood-900/60 border border-amberwood-700/60 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-md text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-goldaccent/10 text-goldaccent mb-6 border border-goldaccent/30 shadow-inner">
+                        <i class="fa-solid fa-broadcast-tower text-3xl animate-pulse"></i>
+                    </div>
+                    <h2 class="serif-title text-3xl sm:text-4xl font-bold tracking-wide mb-3 text-white">通往智慧之門的線上連結
+                    </h2>
+                    <p class="text-amberwood-200 text-sm sm:text-base mb-8 max-w-xl mx-auto">
+                        點擊下方按鈕即可直接加入 Google Meet 或 Microsoft Teams 會議室。若連結已更新，管理者會即時同步於此。
+                    </p>
+
+                    <!-- 會議狀態卡片 -->
+                    <div
+                        class="bg-amberwood-950/80 border border-amberwood-700/50 rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
+                        <div
+                            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 pb-4 border-b border-amberwood-800/80">
+                            <div>
+                                <span id="displayPlatformTag"
+                                    class="inline-block px-3 py-1 rounded-md bg-amberwood-800 text-goldaccent text-xs font-semibold mb-2">Google
+                                    Meet</span>
+                                <h3 id="displayTopic" class="text-lg font-bold text-white">心靈成長系列：小故事大道理</h3>
+                            </div>
+                            <!-- <div class="flex items-center space-x-2 text-xs text-amberwood-300">
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
                             <span id="displayStatusText">目前連線開放中</span>
+                        </div> -->
+
+                            <!-- 狀態掛載容器 -->
+                            <div id="live-status-app" v-cloak class="mt-4">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <!-- 圓點標籤容器 -->
+                                    <span class="relative flex h-3 w-3">
+                                        <!-- 開放時顯示 .animate-ping -->
+                                        <span v-if="isOpenToday"
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <!-- 狀態實心圓 -->
+                                        <span class="relative inline-flex h-3 w-3 rounded-full"
+                                            :class="isOpenToday ? 'bg-emerald-500' : 'bg-red-500'"></span>
+                                    </span>
+
+                                    <!-- 文字狀態 -->
+                                    <span class="text-sm font-medium"
+                                        :class="isOpenToday ? 'text-emerald-600' : 'text-gray-400'">
+                                        {{ isOpenToday ? '目前連線開放中' : '目前沒有課程，敬請期待' }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm text-amberwood-300">
+                            <p class="flex items-center"><i class="fa-regular fa-clock w-6 text-goldaccent"></i> <span
+                                    id="displayTime">每週一晚上 20:30 - 21:30</span></p>
+                            <p class="flex items-center"><i class="fa-solid fa-link w-6 text-goldaccent"></i> <span
+                                    id="displayUrlText"
+                                    class="truncate font-mono text-xs bg-amberwood-900/90 px-2 py-1 rounded text-amberwood-200 max-w-xs sm:max-w-md inline-block">https://meet.google.com/abc-defg-hij</span>
+                            </p>
                         </div>
                     </div>
-                    <div class="space-y-2 text-sm text-amberwood-300">
-                        <p class="flex items-center"><i class="fa-regular fa-clock w-6 text-goldaccent"></i> <span id="displayTime">每週一晚上 20:30 - 21:30</span></p>
-                        <p class="flex items-center"><i class="fa-solid fa-link w-6 text-goldaccent"></i> <span id="displayUrlText" class="truncate font-mono text-xs bg-amberwood-900/90 px-2 py-1 rounded text-amberwood-200 max-w-xs sm:max-w-md inline-block">https://meet.google.com/abc-defg-hij</span></p>
-                    </div>
-                </div>
 
-                <!-- 進入會議主按鈕 -->
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a id="mainMeetingBtn" href="https://meet.google.com/skx-xkmi-wyv" target="_blank" rel="noopener noreferrer" 
-                       class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-goldaccent to-amber-500 hover:from-amber-400 hover:to-amber-600 text-amberwood-950 font-bold text-lg shadow-xl hover:shadow-goldaccent/20 transition transform hover:-translate-y-1 flex items-center justify-center space-x-3 group">
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xl group-hover:scale-110 transition-transform"></i>
-                        <span id="mainMeetingBtnText">立即進入視訊會議室</span>
-                    </a>
-                    <button onclick="copyMeetingUrl()" class="w-full sm:w-auto px-6 py-5 rounded-2xl bg-amberwood-800 hover:bg-amberwood-700 text-amberwood-100 font-medium text-sm transition border border-amberwood-600 flex items-center justify-center space-x-2">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>複製會議連結</span>
-                    </button>
+                    <!-- 進入會議主按鈕 -->
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a id="mainMeetingBtn" href="https://meet.google.com/skx-xkmi-wyv" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-goldaccent to-amber-500 hover:from-amber-400 hover:to-amber-600 text-amberwood-950 font-bold text-lg shadow-xl hover:shadow-goldaccent/20 transition transform hover:-translate-y-1 flex items-center justify-center space-x-3 group">
+                            <i
+                                class="fa-solid fa-arrow-up-right-from-square text-xl group-hover:scale-110 transition-transform"></i>
+                            <span id="mainMeetingBtnText">立即進入視訊會議室</span>
+                        </a>
+                        <button onclick="copyMeetingUrl()"
+                            class="w-full sm:w-auto px-6 py-5 rounded-2xl bg-amberwood-800 hover:bg-amberwood-700 text-amberwood-100 font-medium text-sm transition border border-amberwood-600 flex items-center justify-center space-x-2">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>複製會議連結</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 講座時間與場次 -->
-    <section id="schedule" class="py-20 bg-warmcream">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amberwood-600 font-semibold tracking-widest text-xs uppercase block mb-3">Event Schedule</span>
-                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-amberwood-950 mb-4">課程時間表</h2>
-                <div class="w-16 h-1 bg-goldaccent mx-auto rounded-full"></div>
-            </div>
+        <!-- 講座時間與場次 -->
+        <section id="schedule" class="py-20 bg-warmcream">
 
-            <div class="max-w-3xl mx-auto space-y-4">
-                <!-- 場次 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">9月</span>
-                            <span class="text-lg">14</span>
+            <div id="schedule-app" class="space-y-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- 使用 v-for 迴圈動態渲染每一場課程卡片 -->
+                <div v-for="item in processedEvents" :key="item.date"
+                    class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
+                    <div class="flex items-center gap-4">
+                        <!-- 月份與日期 -->
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
+                            <div class="text-xs text-amberwood-600 uppercase">{{ item.monthText }}</div>
+                            <div class="text-xl font-bold text-stone-800">{{ item.dayText }}</div>
                         </div>
+
+                        <!-- 內容資訊 -->
                         <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">最近一次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
+                            <!-- 狀態標籤 (動態切換背景與文字顏色) -->
+                            <span class="inline-block px-2 py-0.5 text-xs font-medium rounded-full mb-1" :class="{
+                    'bg-stone-200 text-stone-600': item.status === '已結束',
+                    'bg-amber-100 text-amber-800 font-semibold': item.status === '最近一次',
+                    'bg-stone-100 text-stone-500': item.status === '預告場次',
+                    'bg-rose-100 text-rose-700 font-semibold': item.status === '最後一次'
+                  }">
+                                {{ item.status }}
+                            </span>
+                            <h3 class="font-bold text-stone-800">{{ item.title }}</h3>
+                            <p class="text-xs text-amberwood-600 mt-1">
+                                <i class="fa-regular fa-clock mr-1"></i>
+                                {{ item.time }}
+                            </p>
                         </div>
                     </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl bg-amberwood-800 text-goldaccent text-sm font-medium hover:bg-amberwood-900 transition whitespace-nowrap">
-                        加入會議
-                    </a>
-                </div>
 
-                <!-- 場次 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">9月</span>
-                            <span class="text-lg">21</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-
-                <!-- 場次 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">10月</span>
-                            <span class="text-lg">05</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-
-                <!-- 場次 4 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">10月</span>
-                            <span class="text-lg">19</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-
-                <!-- 場次 5 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">11月</span>
-                            <span class="text-lg">02</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-                
-                <!-- 場次 6 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">11月</span>
-                            <span class="text-lg">16</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-
-                <!-- 場次 7 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">11月</span>
-                            <span class="text-lg">23</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-
-                <!-- 場次 8 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">12月</span>
-                            <span class="text-lg">07</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-
-                <!-- 場次 9 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">12月</span>
-                            <span class="text-lg">14</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">預告場次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">小故事，大道理</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        了解詳情
-                    </a>
-                </div>
-
-                <!-- 場次 10 -->
-                <div class="bg-white p-6 rounded-2xl border border-amberwood-200/80 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-amberwood-400 transition">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-14 h-14 rounded-2xl bg-amberwood-100 text-amberwood-900 flex flex-col items-center justify-center font-bold">
-                            <span class="text-xs text-amberwood-600 uppercase">12月</span>
-                            <span class="text-lg">21</span>
-                        </div>
-                        <div>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amberwood-100 text-amberwood-800 font-semibold">最後一次</span>
-                            <h3 class="serif-title font-bold text-lg text-amberwood-900 mt-1">心得交流</h3>
-                            <p class="text-xs text-amberwood-600 mt-1"><i class="fa-regular fa-clock mr-1"></i> 週一 20:30 - 21:30 (線上視訊)</p>
-                        </div>
-                    </div>
-                    <a href="#live" class="px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap">
-                        期待
+                    <!-- 按鈕 -->
+                    <a :href="item.status === '已結束' ? '#' : 'https://meet.google.com/skx-xkmi-wyv'"
+                        class="px-4 py-2 text-sm font-medium rounded-lg transition"
+                        :class="item.status === '已結束' ? 'bg-stone-100 text-stone-400 cursor-not-allowed' : 'px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap'">
+                        {{ item.status === '已結束' ? '期待再相見' : '了解詳情' }}
                     </a>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 故事集 -->
-    <section id="story" class="py-20 bg-warmcream"> 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amberwood-600 font-semibold tracking-widest text-xs uppercase block mb-3">Stories</span>
-                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-amberwood-950 mb-4">每週故事集</h2>
-                <div class="w-16 h-1 bg-goldaccent mx-auto rounded-full"></div>
+        <!-- 故事集 -->
+        <section id="story" class="py-20 bg-warmcream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span
+                        class="text-amberwood-600 font-semibold tracking-widest text-xs uppercase block mb-3">Stories</span>
+                    <h2 class="serif-title text-3xl sm:text-4xl font-bold text-amberwood-950 mb-4">每週故事集</h2>
+                    <div class="w-16 h-1 bg-goldaccent mx-auto rounded-full"></div>
+                </div>
             </div>
-        </div>            
-        <div class="rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
-            <h3 id="displayTopic" class="text-lg font-bold text-black">09/21 (一) 小故事大道理</h3>
-            <img src="Images/Stories/0921.png"></img>
-        </div>   
-    </section>
+            <div class="rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
+                <h3 id="displayTopic" class="text-lg font-bold text-black">09/21 (一) 小故事大道理</h3>
+                <img src="Images/Stories/0921.png"></img>
+            </div>
+        </section>
 
-    <!-- 練習 -->
-    <section id="story" class="py-20 bg-warmcream"> 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amberwood-600 font-semibold tracking-widest text-xs uppercase block mb-3">Practices</span>
-                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-amberwood-950 mb-4">每週小覺察</h2>
-                <div class="w-16 h-1 bg-goldaccent mx-auto rounded-full"></div>
+        <!-- 練習 -->
+        <section id="practice" class="py-20 bg-warmcream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span
+                        class="text-amberwood-600 font-semibold tracking-widest text-xs uppercase block mb-3">Practices</span>
+                    <h2 class="serif-title text-3xl sm:text-4xl font-bold text-amberwood-950 mb-4">每週小覺察</h2>
+                    <div class="w-16 h-1 bg-goldaccent mx-auto rounded-full"></div>
+                </div>
             </div>
-        </div>            
-        <div class="rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
-            <h3 id="displayTopic" class="text-lg font-bold text-black">09/21 (一) 覺察生命中的烤地瓜</h3>
-            <img src="Images/Practices/0921.png"></img>
-        </div>   
-    </section>
+            <div class="rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
+                <h3 id="displayTopic" class="text-lg font-bold text-black">09/21 (一) 覺察生命中的烤地瓜</h3>
+                <img src="Images/Practices/0921.png"></img>
+            </div>
+        </section>
 
-    <!-- 老師的話 -->
-    <section id="story" class="py-20 bg-warmcream"> 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amberwood-600 font-semibold tracking-widest text-xs uppercase block mb-3">Wisdom</span>
-                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-amberwood-950 mb-4">智慧小語 QR Code</h2>
-                <div class="w-16 h-1 bg-goldaccent mx-auto rounded-full"></div>
+        <!-- 老師的話 -->
+        <section id="wisdom" class="py-20 bg-warmcream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span
+                        class="text-amberwood-600 font-semibold tracking-widest text-xs uppercase block mb-3">Wisdom</span>
+                    <h2 class="serif-title text-3xl sm:text-4xl font-bold text-amberwood-950 mb-4">智慧小語 QR Code</h2>
+                    <div class="w-16 h-1 bg-goldaccent mx-auto rounded-full"></div>
+                </div>
             </div>
-        </div>            
-        <div class="rounded-2xl p-6 mb-8 max-w-2xl mx-auto shadow-inner">
-            <h3 id="displayTopic" class="text-lg font-bold text-black text-center">聽聽生命中的指引 ...</h3>
-            <img src="Images/QR Code/QR Code.png" style="width: 50%; height: auto;" class="center-img"></img>
-        </div>   
-    </section>
+            <div class="rounded-2xl p-6 mb-8 max-w-2xl mx-auto shadow-inner">
+                <h3 id="displayTopic" class="text-lg font-bold text-black text-center">聽聽生命中的指引 ...</h3>
+                <img src="Images/QR Code/QR Code.png" style="width: 50%; height: auto;" class="center-img"></img>
+            </div>
+        </section>
+    </div>
 
     <!-- 頁尾 -->
     <footer class="bg-amberwood-950 text-amberwood-300 py-12 border-t border-amberwood-900 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
                 <div class="flex items-center justify-center md:justify-start space-x-3 mb-2">
                     <div class="w-8 h-8 rounded-full bg-amberwood-800 text-goldaccent flex items-center justify-center">
@@ -423,9 +344,12 @@
     </footer>
 
     <!-- 管理者設定 Modal (用於更改會議連結與內容) -->
-    <div id="adminModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-warmcream border border-amberwood-300 rounded-3xl w-full max-w-lg p-6 sm:p-8 shadow-2xl relative m-4">
-            <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-amberwood-600 hover:text-amberwood-900 text-xl w-8 h-8 flex items-center justify-center rounded-full bg-amberwood-200/60">
+    <div id="adminModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
+        <div
+            class="bg-warmcream border border-amberwood-300 rounded-3xl w-full max-w-lg p-6 sm:p-8 shadow-2xl relative m-4">
+            <button onclick="closeAdminModal()"
+                class="absolute top-6 right-6 text-amberwood-600 hover:text-amberwood-900 text-xl w-8 h-8 flex items-center justify-center rounded-full bg-amberwood-200/60">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
@@ -442,7 +366,8 @@
             <form id="adminForm" onsubmit="saveMeetingSettings(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold uppercase text-amberwood-800 mb-1">視訊平台類型</label>
-                    <select id="inputPlatform" class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500">
+                    <select id="inputPlatform"
+                        class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500">
                         <option value="Google Meet">Google Meet</option>
                         <option value="Microsoft Teams">Microsoft Teams</option>
                         <option value="Zoom Meeting">Zoom Meeting</option>
@@ -452,24 +377,32 @@
 
                 <div>
                     <label class="block text-xs font-semibold uppercase text-amberwood-800 mb-1">會議主題名稱</label>
-                    <input type="text" id="inputTopic" required class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500" placeholder="例如：心靈成長系列：覺察當下的力量">
+                    <input type="text" id="inputTopic" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500"
+                        placeholder="例如：心靈成長系列：覺察當下的力量">
                 </div>
 
                 <div>
                     <label class="block text-xs font-semibold uppercase text-amberwood-800 mb-1">會議連結網址 (URL)</label>
-                    <input type="url" id="inputUrl" required class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500" placeholder="https://meet.google.com/xxx-xxxx-xxx">
+                    <input type="url" id="inputUrl" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500"
+                        placeholder="https://meet.google.com/xxx-xxxx-xxx">
                 </div>
 
                 <div>
                     <label class="block text-xs font-semibold uppercase text-amberwood-800 mb-1">時間說明文字</label>
-                    <input type="text" id="inputTime" required class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500" placeholder="每週六下午 02:00 - 04:00">
+                    <input type="text" id="inputTime" required
+                        class="w-full px-4 py-2.5 rounded-xl border border-amberwood-300 bg-white text-amberwood-900 text-sm focus:outline-none focus:ring-2 focus:ring-amberwood-500"
+                        placeholder="每週六下午 02:00 - 04:00">
                 </div>
 
                 <div class="pt-4 flex items-center justify-end space-x-3">
-                    <button type="button" onclick="closeAdminModal()" class="px-5 py-2.5 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-200/50 transition">
+                    <button type="button" onclick="closeAdminModal()"
+                        class="px-5 py-2.5 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-200/50 transition">
                         取消
                     </button>
-                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-amberwood-800 hover:bg-amberwood-900 text-goldaccent text-sm font-medium transition shadow">
+                    <button type="submit"
+                        class="px-6 py-2.5 rounded-xl bg-amberwood-800 hover:bg-amberwood-900 text-goldaccent text-sm font-medium transition shadow">
                         儲存變更
                     </button>
                 </div>
@@ -478,10 +411,86 @@
     </div>
 
     <!-- 自定義訊息提示框 (代替 alert) -->
-    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 bg-amberwood-900 text-warmcream px-5 py-3 rounded-2xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-3 border border-amberwood-700">
+    <div id="toastNotification"
+        class="fixed bottom-6 right-6 z-50 bg-amberwood-900 text-warmcream px-5 py-3 rounded-2xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-3 border border-amberwood-700">
         <i id="toastIcon" class="fa-solid fa-circle-check text-goldaccent"></i>
         <span id="toastMessage" class="text-sm font-medium">設定已成功更新！</span>
     </div>
+
+    <script>
+        const { createApp, ref, computed } = Vue;
+
+        createApp({
+            setup() {
+                // 1. 課程資料表 (YYYY-MM-DD)
+                const events = ref([
+                    { date: '2026-09-14', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-09-21', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-10-05', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-10-19', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-11-02', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-11-16', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-11-23', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-12-07', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-12-14', title: '小故事，大道理', time: '週一 20:30 - 21:30 (線上視訊)' },
+                    { date: '2026-12-21', title: '心得交流', time: '週一 20:30 - 21:30 (線上視訊)' }
+                ]);
+
+                // 2. 取得今天日期字串 (YYYY-MM-DD)
+                const getTodayStr = () => {
+                    const today = new Date();
+                    const year = today.getFullYear();
+                    const month = String(today.getMonth() + 1).padStart(2, '0');
+                    const day = String(today.getDate()).padStart(2, '0');
+                    return `${year}-${month}-${day}`;
+                };
+
+                // 3. 判斷頂部狀態：今天是否有開課
+                const isOpenToday = computed(() => {
+                    const todayStr = getTodayStr();
+                    return events.value.some(event => event.date === todayStr);
+                });
+
+                // 4. 計算下方列表：自動標記「已結束」、「最近一次」、「預告場次」、「最後一次」
+                const processedEvents = computed(() => {
+                    const todayStr = getTodayStr();
+
+                    // 尋找第一場尚未結束的課程 index (大於等於今天的日期)
+                    const upcomingIndex = events.value.findIndex(event => event.date >= todayStr);
+
+                    return events.value.map((event, index) => {
+                        const [eYear, eMonth, eDay] = event.date.split('-');
+                        const monthText = `${parseInt(eMonth)}月`;
+                        const dayText = eDay;
+
+                        let status = '預告場次';
+
+                        if (upcomingIndex === -1 || index < upcomingIndex) {
+                            status = '已結束';
+                        } else if (index === upcomingIndex) {
+                            status = '最近一次';
+                        } else if (index === events.value.length - 1) {
+                            status = '最後一次';
+                        } else {
+                            status = '預告場次';
+                        }
+
+                        return {
+                            ...event,
+                            monthText,
+                            dayText,
+                            status
+                        };
+                    });
+                });
+
+                return {
+                    isOpenToday,
+                    processedEvents
+                };
+            }
+        }).mount('#app');
+    </script>
 
     <script>
         // 預設會議資料
@@ -509,13 +518,13 @@
 
         function loadMeetingSettings() {
             const settings = getStoredSettings();
-            
+
             // 更新畫面上顯示的內容
             document.getElementById("displayPlatformTag").textContent = settings.platform;
             document.getElementById("displayTopic").textContent = settings.topic;
             document.getElementById("displayUrlText").textContent = settings.url;
             document.getElementById("displayTime").textContent = settings.time;
-            
+
             const mainBtn = document.getElementById("mainMeetingBtn");
             mainBtn.href = settings.url;
             document.getElementById("mainMeetingBtnText").textContent = `立即進入 ${settings.platform} 會議`;
@@ -584,5 +593,7 @@
             }, 3000);
         }
     </script>
+
 </body>
+
 </html>
