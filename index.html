@@ -205,14 +205,14 @@
                                     id="displayTime">每週一晚上 20:30 - 21:30</span></p>
                             <p class="flex items-center"><i class="fa-solid fa-link w-6 text-goldaccent"></i> <span
                                     id="displayUrlText"
-                                    class="truncate font-mono text-xs bg-amberwood-900/90 px-2 py-1 rounded text-amberwood-200 max-w-xs sm:max-w-md inline-block">https://meet.google.com/abc-defg-hij</span>
+                                    class="truncate font-mono text-xs bg-amberwood-900/90 px-2 py-1 rounded text-amberwood-200 max-w-xs sm:max-w-md inline-block">https://meet.google.com/mos-yrbo-vgv</span>
                             </p>
                         </div>
                     </div>
 
                     <!-- 進入會議主按鈕 -->
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <a id="mainMeetingBtn" href="https://meet.google.com/skx-xkmi-wyv" target="_blank"
+                        <a id="mainMeetingBtn" href="https://meet.google.com/mos-yrbo-vgv" target="_blank"
                             rel="noopener noreferrer"
                             class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-goldaccent to-amber-500 hover:from-amber-400 hover:to-amber-600 text-amberwood-950 font-bold text-lg shadow-xl hover:shadow-goldaccent/20 transition transform hover:-translate-y-1 flex items-center justify-center space-x-3 group">
                             <i
@@ -265,7 +265,7 @@
                     </div>
 
                     <!-- 按鈕 -->
-                    <a :href="item.status === '已結束' ? '#' : 'https://meet.google.com/skx-xkmi-wyv'"
+                    <a :href="item.status === '已結束' ? '#' : 'https://meet.google.com/mos-yrbo-vgv'"
                         class="px-4 py-2 text-sm font-medium rounded-lg transition"
                         :class="item.status === '已結束' ? 'bg-stone-100 text-stone-400 cursor-not-allowed' : 'px-4 py-2 rounded-xl border border-amberwood-300 text-amberwood-800 text-sm font-medium hover:bg-amberwood-100 transition whitespace-nowrap'">
                         {{ item.status === '已結束' ? '期待再相見' : '了解詳情' }}
@@ -288,6 +288,10 @@
             <div class="rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
                 <h3 id="displayTopic" class="text-lg font-bold text-black">09/21 (一) 小故事大道理</h3>
                 <img src="Images/Stories/0921.png"></img>
+            </div>
+            <div class="rounded-2xl p-6 mb-8 text-left max-w-2xl mx-auto shadow-inner">
+                <h3 id="displayTopic" class="text-lg font-bold text-black">10/05 (一) 小故事大道理</h3>
+                <img src="Images/Stories/1005.png"></img>
             </div>
         </section>
 
@@ -497,7 +501,7 @@
         const DEFAULT_SETTINGS = {
             platform: "Google Meet",
             topic: "小故事，大道理",
-            url: "https://meet.google.com/skx-xkmi-wyv",
+            url: "https://meet.google.com/mos-yrbo-vgv",
             time: "每週一下午 20:30 - 21:30"
         };
 
